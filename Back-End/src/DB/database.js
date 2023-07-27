@@ -1,4 +1,4 @@
-import mysql from "promise-mysql"
+import mysql from "promise-mysql"; /* Gestor de base de datos  */
 import config from "../config.js";
 
 const connection = mysql.createConnection({
@@ -9,6 +9,7 @@ const connection = mysql.createConnection({
 });
 
 const getConnection = ()=>{
+    console.log(connection);
     return connection; 
 }
 

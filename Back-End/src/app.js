@@ -1,5 +1,5 @@
 import express from 'express';
-import categoriasRoutes from './Routes/categorias.routes.js';/* router en el nombre de la constante */
+import categoriasRoutes from './Routes/categorias.routes.js'; /* router en el nombre de la constante */
 
 const app = express();
 

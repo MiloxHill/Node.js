@@ -1,3 +1,4 @@
+import { query } from "express";
 import getConnection from "../DB/database.js";
 
 const  getCategorias = async (req, res) => {
@@ -18,11 +19,22 @@ const  getCategorias = async (req, res) => {
 
 const AddCategorias = async (req, res) =>{
     try {
-        console.log(req.body);
+        const { CategoriaNombre, Descripcion, Imagen } = req.body;
+
+        /* console.log( CategoriaNombre, Descripcion, Imagen); */
+
+        const category = {
+            CategoriaNombre, 
+            Descripcion, 
+            Imagen
+        };
 
         const connection = await getConnection();
 
-        res.json({"CategoriaNombre": "Ropa Femenina"});
+        const result = await connection.query("INSERT INTO categorias SET ?", category);
+
+        /* res.json({"CategoriaNombre": "Ropa Femenina"}); */
+        res.json(result);
         
     } catch (error) {
         res.status(500);
@@ -31,5 +43,6 @@ const AddCategorias = async (req, res) =>{
 }
 
 export const methodsHTTP = {
-    getCategorias
+    getCategorias,
+    AddCategorias
 }

@@ -4,5 +4,6 @@ import { methodsHTTP as categoriaController} from '../Controllers/categoria.cont
 const router = Router();
 
 router.get("/", categoriaController.getCategorias);
+router.post("/", categoriaController.AddCategorias);
 
 export default router;

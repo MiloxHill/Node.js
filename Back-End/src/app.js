@@ -9,6 +9,6 @@ app.set("PORT", 5000);
 app.use(express.json());
 
 /* Routes */
-app.use("/api/categorias", categoriasRoutes);
+app.use("/api/categorias", categoriasRoutes); /* Gestiona todos los metodos HTTP  */
 
 export default app;
